@@ -1,10 +1,7 @@
 package utilities.actions;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import utilities.driver_manager.DriverManager;
 import utilities.exception_handling.ExceptionHandling;
 import utilities.waits.Waits;
@@ -49,7 +46,7 @@ public class ElementActions {
             ExceptionHandling.handleException(exception);
         }
     }
-    
+
     public static String getText(By elementLocator) {
         try {
             findElement(elementLocator);

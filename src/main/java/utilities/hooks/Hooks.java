@@ -1,7 +1,6 @@
 package utilities.hooks;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
-import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -13,22 +12,12 @@ import utilities.reader_manager.properties_reader.ConfigUtils;
 import java.io.IOException;
 
 public class Hooks extends AbstractTestNGCucumberTests {
-
     @BeforeMethod
     public static void setUpDriver() {
         DriverManager.launchChrome();
         DriverManager.navigate(ConfigUtils.get_PortalURL());
     }
 
-    public static WebDriver getDriver() {
-        try {
-            assert DriverManager.getDriver() != null;
-            return DriverManager.getDriver();
-        } catch (Exception exception) {
-            ExceptionHandling.handleException(exception);
-            return null;
-        }
-    }
 
     public void takesScreenshots(ITestResult result) {
         if (result.getStatus() == ITestResult.FAILURE) {

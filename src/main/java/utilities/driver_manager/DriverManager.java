@@ -5,9 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import utilities.exception_handling.ExceptionHandling;
-import utilities.hooks.Hooks;
 
-import java.net.URL;
 import java.time.Duration;
 
 public class DriverManager {
@@ -42,8 +40,8 @@ public class DriverManager {
 
     public static void maximizeWindow() {
         try {
-            driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+            getDriver().manage().window().maximize();
+            getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         } catch (Exception exception) {
             ExceptionHandling.handleException(exception);
         }
@@ -51,20 +49,27 @@ public class DriverManager {
 
     public static void navigate(String url) {
         try {
-//            driver.get(url);
-            driver.navigate().to(new URL(url));
+            getDriver().navigate().to(url);
         } catch (Exception exception) {
             ExceptionHandling.handleException(exception);
         }
     }
 
+
     public static WebDriver getDriver() {
-        return Hooks.getDriver();
+        try {
+            assert driver != null;
+            return driver;
+        } catch (Exception exception) {
+            ExceptionHandling.handleException(exception);
+            return null;
+        }
     }
 
     public static void quit() {
         try {
-            driver.quit();
+            assert driver != null;
+            getDriver().quit();
         } catch (Exception exception) {
             ExceptionHandling.handleException(exception);
         }

@@ -7,9 +7,10 @@ import utilities.driver_manager.DriverManager;
 import utilities.exception_handling.ExceptionHandling;
 
 import java.time.Duration;
+import java.util.Objects;
 
 public class Waits {
-    private static final WebDriverWait webDriverWait = new WebDriverWait(DriverManager.getDriver(), Duration.ofMillis(30000));
+    private static final WebDriverWait webDriverWait = new WebDriverWait(Objects.requireNonNull(DriverManager.getDriver()), Duration.ofMillis(30000));
 
     public static void waitForElementToBeVisible(By elementLocator) {
         try {
@@ -22,6 +23,14 @@ public class Waits {
     public static void waitForElementsToBeVisible(By elementLocator) {
         try {
             webDriverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(elementLocator));
+        } catch (Exception exception) {
+            ExceptionHandling.handleException(exception);
+        }
+    }
+
+    public static void waitForAlertToBeVisible() {
+        try {
+            webDriverWait.until(ExpectedConditions.alertIsPresent());
         } catch (Exception exception) {
             ExceptionHandling.handleException(exception);
         }
