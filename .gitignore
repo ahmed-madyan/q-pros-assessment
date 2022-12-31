@@ -42,6 +42,7 @@ build/
 
 # Output Files #
 /target/
+/screenshots/
 
 # Compiled class file
 *.class
