@@ -20,7 +20,7 @@ public class Waits {
         }
     }
 
-    public static void waitForElementsToBeVisible(By elementLocator) {
+    public static void waitForAllElementsToBeVisible(By elementLocator) {
         try {
             webDriverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(elementLocator));
         } catch (Exception exception) {
