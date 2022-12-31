@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class Hooks extends AbstractTestNGCucumberTests {
     @BeforeMethod
-    public static void setUpDriver() {
+    public void setUpDriver() {
         DriverManager.launchChrome();
         DriverManager.navigate(ConfigUtils.get_PortalURL());
     }
