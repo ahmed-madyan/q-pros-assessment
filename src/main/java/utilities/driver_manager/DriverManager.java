@@ -7,6 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import utilities.exception_handling.ExceptionHandling;
 
 import java.time.Duration;
+import java.util.Objects;
 
 public class DriverManager {
     private static WebDriver driver = null;
@@ -40,7 +41,7 @@ public class DriverManager {
 
     public static void maximizeWindow() {
         try {
-            getDriver().manage().window().maximize();
+            Objects.requireNonNull(getDriver()).manage().window().maximize();
             getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         } catch (Exception exception) {
             ExceptionHandling.handleException(exception);
@@ -49,7 +50,7 @@ public class DriverManager {
 
     public static void navigate(String url) {
         try {
-            getDriver().navigate().to(url);
+            Objects.requireNonNull(getDriver()).navigate().to(url);
         } catch (Exception exception) {
             ExceptionHandling.handleException(exception);
         }
@@ -69,7 +70,7 @@ public class DriverManager {
     public static void quit() {
         try {
             assert driver != null;
-            getDriver().quit();
+            Objects.requireNonNull(getDriver()).quit();
         } catch (Exception exception) {
             ExceptionHandling.handleException(exception);
         }
