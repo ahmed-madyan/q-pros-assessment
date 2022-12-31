@@ -9,5 +9,6 @@
   "logOut_Text": "Log in",
   "signUp_Text": "Select Interests",
   "welcomeNameOfUser_Text": "Welcome",
-  "signUpConfirmationText": "Sign up successful."
+  "signUpConfirmationText": "Sign up successful.",
+  "productAddedConfirmationText": "Product added"
 }
