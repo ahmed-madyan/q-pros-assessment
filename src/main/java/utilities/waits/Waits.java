@@ -43,5 +43,4 @@ public class Waits {
             ExceptionHandling.handleException(exception);
         }
     }
-
 }
