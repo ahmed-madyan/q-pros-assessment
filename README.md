@@ -27,9 +27,13 @@
 <!-- ABOUT THE Repo -->
 ## About The Repo
 
-This Repo creating for QA assessment with the following:
+This Repo created for QA automation assessment to automate the below mentioned use cases:
 
-Login for applying some E2E testcases using javascript preferred to be done using cypress framework.
+1) Register and login
+2) Check the listed Categories has Items
+3) Add random item to the cart
+4) Remove item from cart
+5) Complete successful checkout with random item
 
 Pre-condition: 
 
@@ -44,9 +48,7 @@ Test Steps:
 
 Test date:
 
-1. URL: https://beta.workmotion.com/login
-2. Username: aliaa+qahrmanager@workmotion.com
-3. Password: Test1234
+1. URL: [https://beta.workmotion.com/login](https://www.demoblaze.com/)
 
 Use the `README.md` to get started.
 
