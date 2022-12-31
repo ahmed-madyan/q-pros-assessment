@@ -1,5 +1,5 @@
 @Regression @Regression_FE
-Feature: Log in
+Feature: Register and Log in
 
   @Register
   Scenario: Validate register
