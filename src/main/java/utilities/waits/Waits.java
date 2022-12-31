@@ -10,7 +10,7 @@ import java.time.Duration;
 import java.util.Objects;
 
 public class Waits {
-    private static final WebDriverWait webDriverWait = new WebDriverWait(Objects.requireNonNull(DriverManager.getDriver()), Duration.ofMillis(30000));
+    private static final WebDriverWait webDriverWait = new WebDriverWait(Objects.requireNonNull(DriverManager.getDriver()), Duration.ofSeconds(30));
 
     public static void waitForElementToBeVisible(By elementLocator) {
         try {
@@ -28,6 +28,14 @@ public class Waits {
         }
     }
 
+    public static void waitForElementToBeClickable(By elementLocator) {
+        try {
+            webDriverWait.until(ExpectedConditions.elementToBeClickable(elementLocator));
+        } catch (Exception exception) {
+            ExceptionHandling.handleException(exception);
+        }
+    }
+
     public static void waitForAlertToBeVisible() {
         try {
             webDriverWait.until(ExpectedConditions.alertIsPresent());
@@ -36,11 +44,4 @@ public class Waits {
         }
     }
 
-    public static void waitForElementToBeClickable(By elementLocator) {
-        try {
-            webDriverWait.until(ExpectedConditions.elementToBeClickable(elementLocator));
-        } catch (Exception exception) {
-            ExceptionHandling.handleException(exception);
-        }
-    }
 }
