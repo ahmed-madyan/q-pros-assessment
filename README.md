@@ -35,19 +35,7 @@ This Repo created for QA automation assessment to automate the below mentioned u
 4) Remove item from cart
 5) Complete successful checkout with random item
 
-Pre-condition: 
-
-As you already logged in as HR manager, so you’ll be able to add new employee.
-
-Test Steps:
-1. Add new Talent > Create new
-2. Select WorkGlobal 
-3. Fill all the onboarding steps
-4. Open talents page
-5. Make sure the talent has been added as onboarding status
-
 Test date:
-
 1. URL: [https://beta.workmotion.com/login](https://www.demoblaze.com/)
 
 Use the `README.md` to get started.
