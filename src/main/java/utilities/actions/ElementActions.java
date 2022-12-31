@@ -7,6 +7,7 @@ import utilities.exception_handling.ExceptionHandling;
 import utilities.waits.Waits;
 
 import java.util.List;
+import java.util.Objects;
 
 public class ElementActions {
 
@@ -16,23 +17,22 @@ public class ElementActions {
         } catch (Exception exception) {
             ExceptionHandling.handleException(exception);
         }
-        return DriverManager.getDriver().findElement(elementLocator);
+        return Objects.requireNonNull(DriverManager.getDriver()).findElement(elementLocator);
     }
 
     public static List<WebElement> findElements(By elementLocator) {
         try {
-            Waits.waitForElementsToBeVisible(elementLocator);
+            Waits.waitForAllElementsToBeVisible(elementLocator);
         } catch (Exception exception) {
             ExceptionHandling.handleException(exception);
         }
-        return DriverManager.getDriver().findElements(elementLocator);
+        return Objects.requireNonNull(DriverManager.getDriver()).findElements(elementLocator);
     }
 
     public static void click(By elementLocator) {
         try {
-            findElement(elementLocator);
             Waits.waitForElementToBeClickable(elementLocator);
-            DriverManager.getDriver().findElement(elementLocator).click();
+            findElement(elementLocator).click();
         } catch (Exception exception) {
             ExceptionHandling.handleException(exception);
         }
@@ -40,8 +40,7 @@ public class ElementActions {
 
     public static void type(By elementLocator, String text) {
         try {
-            findElement(elementLocator);
-            DriverManager.getDriver().findElement(elementLocator).sendKeys(text);
+            findElement(elementLocator).sendKeys(text);
         } catch (Exception exception) {
             ExceptionHandling.handleException(exception);
         }
@@ -49,10 +48,10 @@ public class ElementActions {
 
     public static String getText(By elementLocator) {
         try {
-            findElement(elementLocator);
+            return findElement(elementLocator).getText();
         } catch (Exception exception) {
             ExceptionHandling.handleException(exception);
+            return null;
         }
-        return DriverManager.getDriver().findElement(elementLocator).getText();
     }
 }
