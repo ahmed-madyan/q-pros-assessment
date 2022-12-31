@@ -36,7 +36,7 @@ This Repo created for QA automation assessment to automate the below mentioned u
 5) Complete successful checkout with random item
 
 Test date:
-1. URL: [https://beta.workmotion.com/login](https://www.demoblaze.com/)
+1. URL: [https://www.demoblaze.com/](https://www.demoblaze.com/)
 
 Use the `README.md` to get started.
 
