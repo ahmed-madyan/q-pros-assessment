@@ -7,12 +7,12 @@ import pages.Login;
 import utilities.reader_manager.json_reader.JSONReaderManager;
 
 public class LogIn_StepDef {
-    private static final String test_Data_File_Path = ("src/test/resources/test_data/fe/input/TestData.json");
-    private static final JSONObject test_Data = JSONReaderManager.parseJSON(test_Data_File_Path);
+    private static final String input_TestData_FilePath = ("src/test/resources/test_data/input/Input_TestData.json");
+    private static final JSONObject input_TestData = JSONReaderManager.parseJSON(input_TestData_FilePath);
 
     @When("Login with existing user")
     public void loginWithExistingUser() {
-        Login.login(test_Data.get("userName").toString(), test_Data.get("password").toString());
+        Login.login(input_TestData.get("userName").toString(), input_TestData.get("password").toString());
     }
 
     @Then("Validate user logged in successfully")

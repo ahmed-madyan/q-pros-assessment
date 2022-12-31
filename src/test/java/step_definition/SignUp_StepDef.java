@@ -10,23 +10,34 @@ import utilities.reader_manager.json_reader.JSONReaderManager;
 import java.util.Random;
 
 public class SignUp_StepDef {
-    private static final String test_Data_File_Path = ("src/test/resources/test_data/input/TestData.json");
-    private static final JSONObject test_Data = JSONReaderManager.parseJSON(test_Data_File_Path);
+    private static final String expected_TestData_FilePath = ("src/test/resources/test_data/expected/Expected_TestData.json");
+    private static final JSONObject expected_TestData = JSONReaderManager.parseJSON(expected_TestData_FilePath);
+    private static final String input_TestData_FilePath = ("src/test/resources/test_data/input/Input_TestData.json");
+    private static final JSONObject input_TestData = JSONReaderManager.parseJSON(input_TestData_FilePath);
+    private static String username;
 
-    @When("Username sign up with new user data")
+    @When("Username sign up with new generate user data")
     public void usernameSignUpWithNewUserData() {
         Random random = new Random();
-        String username = ("username" + random.nextInt());
-        SignUp.signUp(username, test_Data.get("password").toString());
+        setUsername("username" + random.nextInt());
+        SignUp.signUp(username, input_TestData.get("password").toString());
     }
 
     @Then("Validate sign up successful message appears in JS alert")
     public void validateSignUpSuccessfulMessageAppearsInJSAlert() {
-        SignUp.validateSignUpSuccessfulMessageInConfirmationAlert(test_Data.get("signUpConfirmationText").toString());
+        SignUp.validateSignUpSuccessfulMessageInConfirmationAlert(expected_TestData.get("signUpConfirmationText").toString());
     }
 
     @And("Accept the confirmation alert")
     public void acceptTheConfirmationAlert() {
         SignUp.acceptSignUpConfirmAlert();
+    }
+
+    public static String getUsername() {
+        return username;
+    }
+
+    public static void setUsername(String username) {
+        SignUp_StepDef.username = username;
     }
 }
