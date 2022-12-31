@@ -37,9 +37,15 @@ public class JSONReaderManager {
      *
      * @return JSONObject data type, the desired JSON Object sent by @param filePath
      */
-    public static JSONObject parseJSON(String filePath) throws IOException, ParseException {
+    public static JSONObject parseJSON(String filePath)  {
         JSONParser parser = new JSONParser();
-        object = (JSONObject) parser.parse(readFileJSON(filePath));
+        try {
+            object = (JSONObject) parser.parse(readFileJSON(filePath));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
         return object;
     }
 

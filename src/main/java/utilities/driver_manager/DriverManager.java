@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import utilities.exception_handling.ExceptionHandling;
-import utilities.test_base.TestBase;
+import utilities.hooks.Hooks;
 
 import java.net.URL;
 import java.time.Duration;
@@ -59,7 +59,7 @@ public class DriverManager {
     }
 
     public static WebDriver getDriver() {
-        return TestBase.getDriver();
+        return Hooks.getDriver();
     }
 
     public static void quit() {

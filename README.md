@@ -80,7 +80,7 @@ to ensure cypress is installed in the correct directory, if not initialize npm n
    ```sh
    npm install cypress --save-dev
    ```
-4. Open Cypress test runner:
+4. Open Cypress tests.RegisterAndLogin runner:
    The long way with the full path
    ```sh
    ./node_modules/.bin/cypress open

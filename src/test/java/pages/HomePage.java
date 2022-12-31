@@ -20,6 +20,7 @@ public class HomePage {
     private static final By category_Laptops = By.xpath("/descendant::div[@class=\"list-group\"]//a[contains(text(), \"Laptops\")]");
     private static final By category_Monitors = By.xpath("/descendant::div[@class=\"list-group\"]//a[contains(text(), \"Monitors\")]");
     private static final By card_block = By.className("card-block");
+    private static final By nameOfUser = By.id("nameofuser");
 
     public static void openHomeTap() {
         ElementActions.click(homeTap);
@@ -71,5 +72,9 @@ public class HomePage {
 
     public static void validateCategoryHasItems() {
         Assert.assertFalse(getListOfCards().isEmpty());
+    }
+
+    public static void validatePageHeaderText(String expectedText) {
+        Assert.assertEquals(ElementActions.getText(page_HeaderTitle), expectedText);
     }
 }

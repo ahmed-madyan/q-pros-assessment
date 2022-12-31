@@ -1,4 +1,4 @@
 package pages;
 
-public class Product \{
+public class Product {
         }
