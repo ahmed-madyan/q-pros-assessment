@@ -42,53 +42,30 @@ Use the `README.md` to get started.
 
 ### Built With
 
-* [![Node][Node.js]][Node-url]
-* [![Cypress][Cypress.io]][Cypress-url]
+* Selenium - Java
+* Maven
+* TestNG
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-First, make sure you have all the [system requirements](https://docs.cypress.io/guides/getting-started/installing-cypress#System-requirements).
+[Guide](https://www.selenium.dev/documentation/webdriver/getting_started/).
 
 ### Prerequisites
 
-Download the [Node.JS](https://nodejs.org/en/download/) source code or a pre-built installer for your platform, and start developing today.
-* Install npm packages
-   ```sh
-   npm install
-   
+Download and install [Java](https://www.oracle.com/java/technologies/downloads/) then add it environment variables.
+Download [Maven](https://maven.apache.org/download.cgi) and then add it environment variables.
+
 ### Installation
 
-1. Navigate to the Repo URL at [GitHub](https://github.com/ahmed-madyan/workmotion-cypress-assessment)
+1. Navigate to the Repo URL at [GitHub](https://github.com/ahmed-madyan/quality-professionals-assessment)
 2. Clone the repo
-   ```sh
-   git clone
-   ```
-3. Make sure that you have already run npm init or have a node_modules folder or package.json file in the root of your project 
-to ensure cypress is installed in the correct directory, if not initialize npm node_modules folder using the following command:
-   ```sh
-   npm -i init
-   ```
-4. Install Cypress via npm if needed
-   
-   Change the current working directory to the project path
+3. Change the current working directory to the project path
    ```sh
    cd /your/project/path
-   ```
-   Install
-   ```sh
-   npm install cypress --save-dev
-   ```
-4. Open Cypress tests.RegisterAndLogin runner:
-   The long way with the full path
-   ```sh
-   ./node_modules/.bin/cypress open
-   ```
-   Or with the shortcut using npm bin
-   ```sh
-   $(npm bin)/cypress open
-   ```
+4. Run maven command to run the desired cucumber tags [mvn clean test -Dcucumber.filter.tags="@TagName"] 
+5. Or you can run the E2E Scenario using the following command [mvn clean test -Dcucumber.filter.tags="@E2E"]
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -109,10 +86,3 @@ If you have a suggestion that would make this better, please fork the repo and c
 * [Gmail](mailto:ahmed.madyan01@gmail.com)
 * [LinkedIn](https://www.linkedin.com/in/ahmed-madyan/)
 * [GitHub](https://github.com/ahmed-madyan)
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-[Node-url]: https://nodejs.org/
-[Node.js]: https://nodejs.org/static/images/logo.svg
-[Cypress.io]: https://upload.wikimedia.org/wikipedia/commons/6/6d/CyPress_logo.svg
-[Cypress-url]: https://www.cypress.io/
