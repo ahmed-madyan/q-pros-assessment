@@ -55,6 +55,7 @@ Use the `README.md` to get started.
 ### Prerequisites
 
 Download and install [Java](https://www.oracle.com/java/technologies/downloads/) then add it environment variables.
+
 Download [Maven](https://maven.apache.org/download.cgi) and then add it environment variables.
 
 ### Installation
