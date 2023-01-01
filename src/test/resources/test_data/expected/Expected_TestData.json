@@ -10,5 +10,13 @@
   "signUp_Text": "Select Interests",
   "welcomeNameOfUser_Text": "Welcome",
   "signUpConfirmationText": "Sign up successful.",
-  "productAddedConfirmationText": "Product added"
+  "productAddedConfirmationText": "Product added",
+  "purchase_Name": "Ahmed",
+  "purchase_Country": "Egypt",
+  "purchase_City": "Cairo",
+  "purchase_Card": "123456789",
+  "purchase_Month": "12",
+  "purchase_Year": "2025",
+  "purchase_Success_Message": "Thank you for your purchase!"
+
 }

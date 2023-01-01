@@ -8,7 +8,7 @@ import utilities.hooks.Hooks;
                 publish = true,
                 features = {"src/test/java/feature"},
                 glue = {"step_definition"},
-                tags = ("@Regression")
+                tags = ("@E2E")
         )
 
 public class TestRunnerFE extends Hooks {

@@ -10,11 +10,19 @@ import java.time.Duration;
 import java.util.Objects;
 
 public class Waits {
-    private static final WebDriverWait webDriverWait = new WebDriverWait(Objects.requireNonNull(DriverManager.getDriver()), Duration.ofSeconds(30));
+    private static final WebDriverWait webDriverWait = new WebDriverWait(Objects.requireNonNull(DriverManager.getDriver()), Duration.ofSeconds(5));
 
     public static void waitForElementToBeVisible(By elementLocator) {
         try {
             webDriverWait.until(ExpectedConditions.presenceOfElementLocated(elementLocator));
+        } catch (Exception exception) {
+            ExceptionHandling.handleException(exception);
+        }
+    }
+
+    public static void waitForElementToBeInVisible(By elementLocator) {
+        try {
+            webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(elementLocator));
         } catch (Exception exception) {
             ExceptionHandling.handleException(exception);
         }

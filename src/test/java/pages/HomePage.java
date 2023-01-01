@@ -4,26 +4,31 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import utilities.actions.ElementActions;
+import utilities.driver_manager.DriverManager;
+import utilities.reader_manager.properties_reader.ConfigUtils;
 
 import java.util.List;
+import java.util.Random;
 
 public class HomePage {
 
     private static final By page_HeaderTitle = By.id("nava");
-    private static final By homeTap = By.linkText("Home");
-    private static final By contactTap = By.linkText("Home");
-    private static final By aboutUsTap = By.linkText("Home");
-    private static final By cartTap = By.linkText("Home");
+    private static final By homeTap = By.xpath("/descendant::div[@id=\"navbarExample\"]//a[contains(text(), \"Home\")]");
+    private static final By contactTap = By.linkText("Contact");
+    private static final By aboutUsTap = By.linkText("About us");
+    private static final By cartTap = By.linkText("Cart");
     private static final By logInTap = By.linkText("Log in");
     private static final By signUpTap = By.linkText("Sign up");
     private static final By category_Phones = By.xpath("/descendant::div[@class=\"list-group\"]//a[contains(text(), \"Phones\")]");
     private static final By category_Laptops = By.xpath("/descendant::div[@class=\"list-group\"]//a[contains(text(), \"Laptops\")]");
     private static final By category_Monitors = By.xpath("/descendant::div[@class=\"list-group\"]//a[contains(text(), \"Monitors\")]");
     private static final By card_block = By.className("card-block");
+    private static final By card_title = By.className("card-title");
+
     private static final By nameOfUser = By.id("nameofuser");
 
     public static void openHomeTap() {
-        ElementActions.click(homeTap);
+        DriverManager.navigate(ConfigUtils.get_PortalURL());
     }
 
     public static void openContactTap() {
@@ -58,23 +63,28 @@ public class HomePage {
         ElementActions.click(category_Monitors);
     }
 
-    public static void validateHomePageHeaderText(String expectedText) {
-        Assert.assertEquals(ElementActions.getText(page_HeaderTitle), expectedText);
-    }
-
     public static List<WebElement> getListOfCards() {
         return ElementActions.findElements(card_block);
     }
 
     public static int getNoOfCards() {
-        return ElementActions.findElements(card_block).size();
+        return getListOfCards().size();
     }
 
     public static void validateCategoryHasItems() {
         Assert.assertFalse(getListOfCards().isEmpty());
     }
 
-    public static void validatePageHeaderText(String expectedText) {
+    public static void validateHomePageHeaderText(String expectedText) {
         Assert.assertEquals(ElementActions.getText(page_HeaderTitle), expectedText);
+    }
+
+    public static List<WebElement> getListOfCardTitles() {
+        return ElementActions.findElements(card_title);
+    }
+
+    public static void selectRandomPhone() {
+        Random random = new Random();
+        getListOfCardTitles().get(random.nextInt(0, getNoOfCards() - 1)).click();
     }
 }

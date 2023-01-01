@@ -1,14 +1,9 @@
 @Regression @Regression_FE
-Feature: E2E
+Feature: Add And Remove Random Item To The Cart
 
-  @E2E
-  Scenario: E2E
+  @AddAndRemoveRandomItemToTheCart
+  Scenario: Add And Remove Random Item To The Cart
     Given User navigated to the portal url
-    When Username sign up with new generate user data
-    Then Validate sign up successful message appears in JS alert
-    And Accept the confirmation alert
-    When Login with the new generated username
-    When User navigated to home tap
     When Select phone product
     Then Validate user navigated to the product page
     When Phone added to the cart
@@ -18,6 +13,16 @@ Feature: E2E
     Then Validate that phone exists in the cart
     When Remove the product
     Then Cart Should be Empty
+
+  @PlaceOrder
+  Scenario: Place order
+    Given User navigated to the portal url
+    When Select phone product
+    Then Validate user navigated to the product page
+    When Phone added to the cart
+    Then Alert pop up should be displayed with a success message
+    When User accepts the alert pop
+    And User navigated to the cart
     When User navigated to home tap
     When Select phone product
     Then Validate user navigated to the product page

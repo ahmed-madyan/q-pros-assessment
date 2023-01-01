@@ -4,6 +4,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.json.simple.JSONObject;
 import pages.Login;
+import pages.SignUp;
 import utilities.reader_manager.json_reader.JSONReaderManager;
 
 public class LogIn_StepDef {
@@ -17,5 +18,10 @@ public class LogIn_StepDef {
 
     @Then("Validate user logged in successfully")
     public void validateUserLoggedInSuccessfully() {
+    }
+
+    @When("Login with the new generated username")
+    public void loginWithTheNewGeneratedUsername() {
+        Login.login(SignUp_StepDef.getUsername(), input_TestData.get("password").toString());
     }
 }
