@@ -50,7 +50,7 @@ Use the `README.md` to get started.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-[Guide](https://www.selenium.dev/documentation/webdriver/getting_started/).
+[Selenium Guide](https://www.selenium.dev/documentation/webdriver/getting_started/).
 
 ### Prerequisites
 
