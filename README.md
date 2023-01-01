@@ -45,7 +45,7 @@ Use the `README.md` to get started.
 * Selenium - Java
 * Maven
 * TestNG
-
+* Cucumber
 
 <!-- GETTING STARTED -->
 ## Getting Started
