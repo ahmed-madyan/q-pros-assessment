@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import utilities.actions.ElementActions;
-import utilities.driver_manager.DriverManager;
-import utilities.reader_manager.properties_reader.ConfigUtils;
 
 import java.util.List;
 import java.util.Random;
@@ -28,7 +26,7 @@ public class HomePage {
     private static final By nameOfUser = By.id("nameofuser");
 
     public static void openHomeTap() {
-        DriverManager.navigate(ConfigUtils.get_PortalURL());
+        ElementActions.click(page_HeaderTitle);
     }
 
     public static void openContactTap() {

@@ -19,7 +19,7 @@ public class SignUp_StepDef {
     @When("Username sign up with new generate user data")
     public void usernameSignUpWithNewUserData() {
         Random random = new Random();
-        setUsername("username" + random.nextInt());
+        setUsername("username" + random.nextInt(0,10000));
         SignUp.signUp(username, input_TestData.get("password").toString());
     }
 

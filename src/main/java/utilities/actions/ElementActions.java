@@ -1,6 +1,7 @@
 package utilities.actions;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import utilities.driver_manager.DriverManager;
 import utilities.exception_handling.ExceptionHandling;
@@ -33,6 +34,15 @@ public class ElementActions {
         try {
             Waits.waitForElementToBeClickable(elementLocator);
             findElement(elementLocator).click();
+        } catch (Exception exception) {
+            ExceptionHandling.handleException(exception);
+        }
+    }
+
+    public static void forceClick(By elementLocator) {
+        try {
+            Waits.waitForElementToBeClickable(elementLocator);
+            ((JavascriptExecutor) DriverManager.getDriver()).executeScript("arguments[0].click();", findElement(elementLocator));
         } catch (Exception exception) {
             ExceptionHandling.handleException(exception);
         }
