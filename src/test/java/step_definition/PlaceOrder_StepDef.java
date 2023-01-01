@@ -2,12 +2,9 @@ package step_definition;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.json.simple.JSONObject;
 import pages.Cart;
-import pages.HomePage;
 import pages.PlaceOrder;
-import pages.Product;
 import utilities.reader_manager.json_reader.JSONReaderManager;
 
 public class PlaceOrder_StepDef {

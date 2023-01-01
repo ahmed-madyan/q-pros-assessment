@@ -4,7 +4,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.json.simple.JSONObject;
 import pages.Login;
-import pages.SignUp;
 import utilities.reader_manager.json_reader.JSONReaderManager;
 
 public class LogIn_StepDef {

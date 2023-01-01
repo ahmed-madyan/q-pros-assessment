@@ -1,15 +1,10 @@
 package step_definition;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.json.simple.JSONObject;
-import org.testng.Assert;
 import pages.HomePage;
-import utilities.driver_manager.DriverManager;
 import utilities.reader_manager.json_reader.JSONReaderManager;
-
-import java.util.Objects;
 
 public class CheckListedCategoriesHasItems_StepDef {
     private static final String expected_TestData_FilePath = ("src/test/resources/test_data/expected/Expected_TestData.json");

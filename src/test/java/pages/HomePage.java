@@ -11,9 +11,6 @@ import java.util.Random;
 public class HomePage {
 
     private static final By page_HeaderTitle = By.id("nava");
-    private static final By homeTap = By.xpath("/descendant::div[@id=\"navbarExample\"]//a[contains(text(), \"Home\")]");
-    private static final By contactTap = By.linkText("Contact");
-    private static final By aboutUsTap = By.linkText("About us");
     private static final By cartTap = By.linkText("Cart");
     private static final By logInTap = By.linkText("Log in");
     private static final By signUpTap = By.linkText("Sign up");
@@ -23,18 +20,8 @@ public class HomePage {
     private static final By card_block = By.className("card-block");
     private static final By card_title = By.className("card-title");
 
-    private static final By nameOfUser = By.id("nameofuser");
-
     public static void openHomeTap() {
         ElementActions.click(page_HeaderTitle);
-    }
-
-    public static void openContactTap() {
-        ElementActions.click(contactTap);
-    }
-
-    public static void openAboutUsTap() {
-        ElementActions.click(aboutUsTap);
     }
 
     public static void openCartTap() {

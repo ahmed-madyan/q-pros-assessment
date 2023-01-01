@@ -3,12 +3,8 @@ package step_definition;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.json.simple.JSONObject;
-import org.testng.Assert;
 import pages.HomePage;
-import utilities.driver_manager.DriverManager;
 import utilities.reader_manager.json_reader.JSONReaderManager;
-
-import java.util.Objects;
 
 public class HomePage_StepDef {
     private static final String test_Data_File_Path = ("src/test/resources/test_data/expected/Expected_TestData.json");
